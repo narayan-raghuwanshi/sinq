@@ -21,10 +21,11 @@ export default function AnnotatorTimer() {
   const [error, setError] = useState('');
 
   // Fetch annotators on component mount
+  // Replace the useEffect hook at the top of your component
   useEffect(() => {
     fetchAnnotators();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   // Update timers every second
   useEffect(() => {
     const interval = setInterval(() => {
